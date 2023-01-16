@@ -6,7 +6,7 @@ fetch("data.json")
 .then(data => {
   bookTitle.innerHTML = data.bookName;
   data.noteList.forEach(note => {
-    let level = note.color === 2 ? 1 : note.color === 4 ? 2 : 3;
+    let level = note.color === 2 ? 1 : note.color === 4 ? 2 :note.color === 1 ? 3 : 4 ;
     const noteElement = document.createElement("div");
     noteElement.classList.add("note");
     noteElement.innerHTML = `<h${level} class="note-title level-${level}" style="background-color:${note.bgColor}">${note.text}</h${level}>
